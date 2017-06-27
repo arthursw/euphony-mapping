@@ -1,0 +1,14 @@
+soundfont/midi-js-soundfonts/FluidR3_GM/*
+soundfont/SNES/*
+
+!soundfont/midi-js-soundfonts/FluidR3_GM/acoustic_grand_piano-mp3/
+!soundfont/midi-js-soundfonts/FluidR3_GM/acoustic_grand_piano-mp3.js
+!soundfont/midi-js-soundfonts/FluidR3_GM/acoustic_grand_piano-ogg.js
+
+libBckp2/
+libBckp/
+
+lib/MIDI.js/.git
+lib/MIDI.js/.gitignore
+
+*.swp

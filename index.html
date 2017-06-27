@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Euphony</title>
+
+    <!-- css -->
+    <link href="./css/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="./css/nanoscroller.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
+
+    <!-- base64 packages -->
+    <!-- <script src="./lib/MIDI.js/VersionControl.Base64.js" type="text/javascript"></script>
+    <script src="./lib/MIDI.js/lib/base64binary.js" type="text/javascript"></script> -->
+
+    <!-- jasmid packages -->
+    <!-- <script src="./lib/MIDI.js/lib/jasmid/stream.js"></script>
+    <script src="./lib/MIDI.js/lib/jasmid/midifile.js"></script>
+    <script src="./lib/MIDI.js/lib/jasmid/replayer.js"></script>
+    -->
+    <!-- MIDI.js packages -->
+    <!-- <script src="./lib/OldMIDI.js/DOMLoader.XMLHttp.js" type="text/javascript"></script>
+    <script src="./lib/OldMIDI.js/DOMLoader.script.js" type="text/javascript"></script>
+    <script src="./lib/OldMIDI.js/MIDI.audioDetect.js" type="text/javascript"></script>
+    <script src="./lib/OldMIDI.js/MIDI.loadPlugin.js" type="text/javascript"></script>
+    <script src="./lib/OldMIDI.js/MIDI.Plugin.js" type="text/javascript"></script>
+    <script src="./lib/OldMIDI.js/MIDI.Player.js" type="text/javascript"></script> -->
+    <script src="./lib/OldMIDI.js/Color.js" type="text/javascript"></script>
+
+
+    <script src="./lib/OldMIDI.js/MusicTheory.js" type="text/javascript"></script>
+    <script src="./lib/OldMIDI.js/MusicTheory.Synesthesia.js" type="text/javascript"></script>
+
+    <script src="./lib/MIDI.js/inc/shim/Base64.js" type="text/javascript"></script>
+    <script src="./lib/MIDI.js/inc/shim/Base64binary.js" type="text/javascript"></script>
+    <script src="./lib/MIDI.js/inc/shim/WebAudioAPI.js" type="text/javascript"></script>
+
+    <script src="./lib/MIDI.js/build/MIDI.js" type="text/javascript"></script>
+
+
+    <!-- shim -->
+    <script src="./lib/MIDI.js/inc/shim/Base64.js" type="text/javascript"></script>
+    <script src="./lib/MIDI.js/inc/shim/Base64binary.js" type="text/javascript"></script>
+    <script src="./lib/MIDI.js/inc/shim/WebAudioAPI.js" type="text/javascript"></script>
+    <script src="./lib/MIDI.js/inc/shim/WebMIDIAPI.js" type="text/javascript"></script>
+    <!-- jasmid package -->
+    <script src="./lib/MIDI.js/inc/jasmid/stream.js"></script>
+    <script src="./lib/MIDI.js/inc/jasmid/midifile.js"></script>
+    <script src="./lib/MIDI.js/inc/jasmid/replayer.js"></script>
+    <!-- midi.js package -->
+    <!--
+    <script src="./lib/MIDI.js/js/midi/audioDetect.js" type="text/javascript"></script>
+    <script src="./lib/MIDI.js/js/midi/gm.js" type="text/javascript"></script>
+    <script src="./lib/MIDI.js/js/midi/loader.js" type="text/javascript"></script>
+    <script src="./lib/MIDI.js/js/midi/plugin.audiotag.js" type="text/javascript"></script>
+    <script src="./lib/MIDI.js/js/midi/plugin.webaudio.js" type="text/javascript"></script>
+    <script src="./lib/MIDI.js/js/midi/plugin.webmidi.js" type="text/javascript"></script>
+    <script src="./lib/MIDI.js/js/midi/player.js" type="text/javascript"></script>
+    <script src="./lib/MIDI.js/js/midi/synesthesia.js" type="text/javascript"></script>
+    -->
+
+    <script src="./lib/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="./lib/jquery.easing.js" type="text/javascript"></script>
+    <script src="./lib/jquery.nanoscroller.min.js" type="text/javascript"></script>
+    <script src="./lib/Three.js" type="text/javascript"></script>
+    <script src="./lib/OrbitControls.js" type="text/javascript"></script>
+    <script src="./lib/state-machine.js" type="text/javascript"></script>
+    <script src="./lib/spin.min.js" type="text/javascript"></script>
+    <script src="./lib/async.min.js" type="text/javascript"></script>
+
+    <!-- Paper.js -->
+    <script src="./lib/Paper.js/paper-full.min.js" type="text/javascript"></script>
+
+    <!-- Dat.GUI -->
+    <script src="./lib/dat.gui.js" type="text/javascript"></script>
+
+    <!-- Generate midi files: jsmidgen -->
+    <!-- <script src="./lib/jsmidgen.js" type="text/javascript"></script> -->
+    <script src="./lib/jsmidgen_browserified.js" type="text/javascript"></script>
+    <script src="./lib/FileSaver.min.js" type="text/javascript"></script>
+
+    <!-- main -->
+    <script src="./src/js/Quad.js" type="text/javascript" ></script>
+    <script src="./src/js/PianoKeyboard2D.js" type="text/javascript" ></script>
+    <script src="./src/js/PianoKeyboard.js" type="text/javascript"></script>
+    <script src="./src/js/NoteRain.js" type="text/javascript"></script>
+    <script src="./src/js/NoteRain2D.js" type="text/javascript"></script>
+    <script src="./src/js/NoteParticles.js" type="text/javascript"></script>
+    <script src="./src/js/SimpleScene.js" type="text/javascript"></script>
+    <script src="./src/js/LoaderWidget.js" type="text/javascript"></script>
+    <script src="./src/js/PlayerWidget.js" type="text/javascript"></script>
+    <script src="./src/js/Euphony.js" type="text/javascript"></script>
+    <script src="./src/js/Main.js" type="text/javascript"></script>
+
+    <!-- Shaders -->
+    <script type="x-shader/x-vertex" id="vertexshader">
+
+        // switch on high precision floats
+        #ifdef GL_ES
+        precision highp float;
+        #endif
+
+        void main() {
+            gl_Position =   projectionMatrix *
+                            modelViewMatrix *
+                            vec4(position,1.0);
+        }
+
+    </script>
+
+    <script type="x-shader/x-fragment" id="fragmentshader">
+
+        #ifdef GL_ES
+        precision highp float;
+        #endif
+
+        uniform sampler2D texture;
+        uniform vec2 resolution;
+
+        uniform mat4 matC;
+
+        void main() {
+            vec4 fragCoordH = vec4(gl_FragCoord.xy/resolution, 1, 0);
+            vec4 uvw_t = matC*fragCoordH;
+            vec2 uv_t = vec2(uvw_t.x/uvw_t.z, uvw_t.y/uvw_t.z);
+            gl_FragColor = texture2D(texture, uv_t);
+        }
+
+    </script>
+  </head>
+  <body>
+
+    pb<div id="canvas" keepalive="true"></div>
+    <canvas id="keyboard-2D" width="800" height="200" keepalive="true" data-keepalive="true"></canvas>
+
+    <div id="player">
+
+      <button class="player-toggle"><i class="fa fa-angle-double-left fa-2x"></i></button>
+
+      <ul class="player-controls">
+        <li class="player-prev" ><i class="fa fa-step-backward"></i></li>
+        <li class="player-play" ><i class="fa fa-play"></i></li>
+        <li class="player-pause" style="display:none;"><i class="fa fa-pause"></i></li>
+        <li class="player-stop" ><i class="fa fa-stop"></i></li>
+        <li class="player-next" ><i class="fa fa-step-forward"></i></li>
+      </ul>
+
+      <div class="player-progress-container">
+        <div class="player-progress-bar"></div>
+        <span class="player-progress-text"></span>
+      </div>
+
+      <ul class="player-playlist-container nano">
+        <div class="content">
+          <ul class="player-playlist"></ul>
+        </div>
+      </ul>
+    </div>
+
+
+    <!-- <footer id="about">
+      <a id="downloadlink" target="_blank" href="">Download file</a> <br>
+      Source code available on <a target="_blank" href="https://github.com/qiao/euphony">Github</a> <br>
+      Try to drag &amp; drop your MIDI files to play
+    </footer> -->
+
+  </body>
+</html>
